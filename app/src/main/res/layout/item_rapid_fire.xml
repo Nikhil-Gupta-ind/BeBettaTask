@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="24dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/inter_semibold_600"
+        android:text="🔥 Rapid Fire"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/inter_regular_400"
+        android:text="5 Questions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- need custom -->
+    <!-- cards behind 360 x 160 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="26dp"
+        android:layout_marginEnd="-8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="@id/card"
+        app:layout_constraintStart_toStartOf="@id/card"
+        android:rotation="5"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/card"
+        app:layout_constraintDimensionRatio="36:16"
+        tools:layout_editor_absoluteX="16dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_behind_rf2" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="-8dp"
+        app:layout_constraintEnd_toEndOf="@id/card"
+        app:layout_constraintStart_toStartOf="@id/card"
+        android:rotation="-4"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/card"
+        app:layout_constraintDimensionRatio="36:16"
+        tools:layout_editor_absoluteX="16dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_behind_rf1" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Main Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintDimensionRatio="36:19"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="12dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_rapid_fire">
+
+            <TextView
+                android:id="@+id/tvQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="24dp"
+                android:fontFamily="@font/rajdhani_semibold_600"
+                android:text="1.  Will Leeds lead at half-time?"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:shadowColor="#40000000"
+                android:shadowDx="1"
+                android:shadowDy=".5"
+                android:shadowRadius="0.8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="50 Coins"
+                android:textColor="#FFDD80"
+                android:shadowColor="#40000000"
+                android:shadowDx="1"
+                android:shadowDy=".5"
+                android:shadowRadius="0.8"
+                android:fontFamily="@font/inter_medium_500"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivCoin"
+                app:layout_constraintStart_toEndOf="@+id/ivCoin"
+                app:layout_constraintTop_toTopOf="@+id/ivCoin" />
+
+            <ImageView
+                android:id="@+id/ivCoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="@+id/tvQuestion"
+                app:layout_constraintTop_toBottomOf="@+id/tvQuestion"
+                app:srcCompat="@drawable/ic_coin" />
+
+            <TextView
+                android:id="@+id/tvYes"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_button_rapid_fire"
+                android:fontFamily="@font/rajdhani_semibold_600"
+                android:paddingVertical="7dp"
+                android:shadowColor="#40000000"
+                android:shadowDx="1"
+                android:shadowDy=".5"
+                android:shadowRadius="0.8"
+                android:text="YES"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="@+id/ivCoin"
+                app:layout_constraintTop_toBottomOf="@+id/tvCoin" />
+
+            <TextView
+                android:id="@+id/tvNo"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/shape_button_rapid_fire"
+                android:fontFamily="@font/rajdhani_semibold_600"
+                android:paddingVertical="7dp"
+                android:shadowColor="#40000000"
+                android:shadowDx="1"
+                android:shadowDy=".5"
+                android:shadowRadius="0.8"
+                android:text="NO"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toEndOf="@+id/tvYes"
+                app:layout_constraintTop_toTopOf="@+id/tvYes" />
+
+            <TextView
+                android:id="@+id/tvSkip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:fontFamily="@font/inter_medium_500"
+                android:shadowColor="#40000000"
+                android:shadowDx="1"
+                android:shadowDy=".5"
+                android:shadowRadius="0.8"
+                android:text="SKIP"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNo"
+                app:layout_constraintStart_toEndOf="@+id/tvNo"
+                app:layout_constraintTop_toTopOf="@+id/tvNo" />
+
+            <!-- need custom seek bar -->
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/tvCoin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvCoin"
+                app:layout_constraintTop_toTopOf="@+id/tvCoin"
+                app:layout_constraintVertical_bias="0.71000004"
+                app:srcCompat="@drawable/custom_seekbar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
